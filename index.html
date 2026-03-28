@@ -18,34 +18,30 @@
             </nav>
         </div>
     </header>
+    
     <section class="Hero">
-        <div class="container">
-            <!-- have image or infor baout you /A section to display the personalized greeting. -->
+        <div class="container"> <!-- Hero Title Section -->
+            <div class="text-center mb-12 pt-10">
+                <div class="inline-flex items-center gap-3 mb-4">
+                    <i class="fas fa-star text-yellow-400 text-4xl"></i>
+                    <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                    Welcome to My World</h1>
+                </div>
+
+            <p class="text-gray-600 text-lg">
+                A personalized interactive experience just for you
+            </p>
         </div>
 
-    </section>
+        <!-- have image or info about you / A section to display the personalized greeting. -->
+        
+    </div>
+</section>
 
-    <section id="contact" class="contact-section">
+    <section  class="contact-section">
         <div class="contact-grid">
-            <div class="contact_info">  <!-- left side of the contact section-->
-                <H2> contact me</H2>
-                <div class="info-item">
-                    <strong>Our Location</strong><br>
-                        upperhill Towers , Nairobi ,Kenya <br>
-                </div>
-                <div class="info-item">
-                    <strong>Email</strong><br>
-                        info@perisw.com <br>
-                </div>
-                <div class="info-item">
-                    <strong>Our Office Numbers</strong><br>
-                        0720123456 <br>
-                </div>
-            </div>
-
             <div class="contact-form">  <!-- right side of the form -->
-                <h2>Lets Talk </h2>
-    
+                <h2>Access Section </h2>
                 <form action="#" method="post">   <!-- A form for collecting the user's name and age.-->
                     <div class="form-group">
                         <label for="fullname">Full Name :</label>
@@ -53,32 +49,30 @@
                     </div>
                     <div class="form-group">
                         <label for="age">Age:</label>
-                        <input type="text" id="age" name="age"  placeholder="Your Age" required>
+                        <input type="number" id="age" name="age"  placeholder="Your Age" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="cellno">Mobile Number :</label>
-                        <input type="number" id="cellno" name="cellno" placeholder="Mobile Number" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" id="email">Email Address :</label>
-                        <input type="text" id="email" name="email" placeholder="email">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea name="message" id="message" rows="10" placeholder="Talk to me"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <button type="submit" value="Send"> Send Message    </button>
+                        <button type="submit" > Save Infromation  </button>
                     </div>
                 </form>
 
             </div>  
+                                                                
+        <div id="displaySection" class="hidden">                                    <!-- Display Section -->
+            <button onclick="clearData()" class="clear-btn">Clear Data</button>
+            <h2 id="greeting"></h2>
+            <div class="info-box">
+                <p>Your age in months:</p>
+                <h3 id="ageMonths"></h3>
+            </div>
+            <div id="adultSection" class="info-box"></div>
+            <div class="quotes-section">
+                <h3>Motivational Quotes (5 times)</h3>
+                <div id="quotesContainer"></div>
+            </div>
         </div>
         
-        
+       </div> 
     </section>
    
     

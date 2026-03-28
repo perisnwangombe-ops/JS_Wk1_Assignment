@@ -7,7 +7,7 @@
 }
 
 body{
-    font-family: 'inter' , system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'inter' , system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu,'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 2;
     color:navy;
     background-color: #f8f9fa;
@@ -43,7 +43,7 @@ nav a {
   color: #444 ;
   text-decoration: none; 
 }
-.hero {
+/* .hero {
   background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   padding: 60px 0 50px;
   text-align: center;
@@ -64,3 +64,70 @@ nav a {
   max-width: 90%;
   color: #555;
 }
+*/
+
+.contact-section{
+    padding: 60px 0 100px;
+}
+.contact-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap :48px
+}
+.contact-info h2 , 
+.contact-form h2{
+        font-size: 1.8rem;
+        margin-bottom: 28px;
+    }
+.info-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+/* Form */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between label and input */
+
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #444;
+    width: 120px; /* keeps labels aligned */
+
+}
+
+.form-group input,
+.form-group textarea {
+  
+  flex: 1;            /* input expands to fill space */
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+ button {
+            background: #4c51bf;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #3b3f9e;
+        }
