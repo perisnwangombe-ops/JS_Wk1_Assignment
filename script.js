@@ -1,70 +1,80 @@
-// Select elements
-const form = document.getElementById("userForm");
-const greetingDiv = document.getElementById("greeting");
-const ageMonthsDiv = document.getElementById("ageMonths");
-const adultContentDiv = document.getElementById("adultContent");
-const quotesDiv = document.getElementById("quotes");
+// Motivational Quote
+const quote = "The only way to do great work is to love what you do.";
 
-// Function: Calculate age in months
-function calculateMonths(age) {
+// Convert age to months
+function calculateAgeInMonths(age) {
     return age * 12;
 }
 
-// Function: Display motivational quotes using loop
+// Display motivational quotes
 function displayQuotes() {
-    quotesDiv.innerHTML = "";
-    const quote = "Keep pushing forward — consistency beats talent.";
+    const container = document.getElementById('quotesContainer');
+    container.innerHTML = "";
 
-    for (let i = 0; i < 5; i++) {
-        const p = document.createElement("p");
-        p.textContent = quote;
-        quotesDiv.appendChild(p);
+    for (let i = 1; i <= 5; i++) {
+        const div = document.createElement('div');
+        div.className = 'quote';
+        div.innerHTML = `"${quote}" <br><small>Quote #${i}</small>`;
+        container.appendChild(div);
     }
 }
 
-// Function: Load data from localStorage
+// Load user data from localStorage
 function loadUserData() {
-    const name = localStorage.getItem("name");
-    const age = localStorage.getItem("age");
+    const name = localStorage.getItem('userName');
+    const age = localStorage.getItem('userAge');
 
     if (name && age) {
-        displayUserData(name, age);
+        document.getElementById('formSection').classList.add('hidden');
+        document.getElementById('displaySection').classList.remove('hidden');
+
+        document.getElementById('greeting').innerHTML = `Hello ${name}! 👋`;
+
+        const months = calculateAgeInMonths(parseInt(age));
+        document.getElementById('ageMonths').textContent = `${months} months`;
+
+        const adultSection = document.getElementById('adultSection');
+        if (parseInt(age) >= 18) {
+            adultSection.innerHTML = `
+                <p style="color: green; font-weight: bold;">
+                    ✅ You are old enough for age‑restricted content
+                </p>
+                <p>You are ${age} years old.</p>
+            `;
+        } else {
+            adultSection.innerHTML = `
+                <p style="color: red; font-weight: bold;">
+                    ❌ You are not old enough for age‑restricted content
+                </p>
+                <p>Please come back when you are older.</p>
+            `;
+        }
+
+        displayQuotes();
     }
 }
 
-// Function: Display user data
-function displayUserData(name, age) {
-    // Greeting (template literal)
-    greetingDiv.innerHTML = `<h2>Hello, ${name}!</h2>`;
-
-    // Age in months
-    const months = calculateMonths(age);
-    ageMonthsDiv.innerHTML = `<p>You are ${months} months old.</p>`;
-
-    // Conditional (if...else)
-    if (age >= 18) {
-        adultContentDiv.innerHTML = "<p>✅ You can access adult content.</p>";
-    } else {
-        adultContentDiv.innerHTML = "<p>❌ You are too young for adult content.</p>";
-    }
-
-    // Quotes
-    displayQuotes();
-}
-
-// Form submission
-form.addEventListener("submit", function (e) {
+// Form submit handler
+document.getElementById('userForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const age = document.getElementById("age").value;
+    const name = document.getElementById('name').value.trim();
+    const age = document.getElementById('age').value;
 
-    // Store in localStorage
-    localStorage.setItem("name", name);
-    localStorage.setItem("age", age);
-
-    displayUserData(name, age);
+    if (name && age) {
+        localStorage.setItem('userName', name);
+        localStorage.setItem('userAge', age);
+        loadUserData();
+    }
 });
 
-// Load stored data on page refresh
+// Clear localStorage
+function clearData() {
+    if (confirm("Clear all saved data?")) {
+        localStorage.clear();
+        location.reload();
+    }
+}
+
+// Run on load
 window.onload = loadUserData;
