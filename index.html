@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="NavBar">
+        <div class="container">
+            <div>My Personal Site</div>
+            <nav>
+                <a href="#">home</a>
+                <a href="#">about</a>
+                <a href="#">contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="Hero">
+        <div class="container">
+            <!-- have image or infor baout you /A section to display the personalized greeting. -->
+        </div>
+
+    </section>
+
+    <section id="contact" class="contact">
+        <H2> contact me</H2>
+        <!-- A form for collecting the user's name and age.-->
+        <form action="#" method="post">
+            <label for="fullname">Full Name :</label>
+                <input type="text" id="fullname" name="fullname"  placeholder="Your name" required>
+
+            <label for="age">Age:</label>
+                <input type="text" id="age" name="age"  placeholder="Your Age" required>
+
+            <label for="cellno">Mobile Number :</label>
+                <input type="number" id="cellno" name="cellno" placeholder="Mobile Number" required>
+
+            <label for="email" id="email">Email Address :</label>
+                <input type="text" id="email" name="email" placeholder="email">
+
+                <input type="text" id="message" name="message" placeholder="message">
+                <textarea name="message" id="message" rows="10" placeholder="Talk to me"></textarea>
+
+            <button type="submit" value="Send"> Send Message    </button>
+
+        </form>
+    </section>
+   
+    
+<script src="script.js"></script>
+</body>
+</html>
