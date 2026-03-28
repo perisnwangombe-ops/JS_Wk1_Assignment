@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <header class="NavBar">
@@ -24,28 +25,60 @@
 
     </section>
 
-    <section id="contact" class="contact">
-        <H2> contact me</H2>
-        <!-- A form for collecting the user's name and age.-->
-        <form action="#" method="post">
-            <label for="fullname">Full Name :</label>
-                <input type="text" id="fullname" name="fullname"  placeholder="Your name" required>
+    <section id="contact" class="contact-section">
+        <div class="contact-grid">
+            <div class="contact_info">  <!-- left side of the contact section-->
+                <H2> contact me</H2>
+                <div class="info-item">
+                    <strong>Our Location</strong><br>
+                        upperhill Towers , Nairobi ,Kenya <br>
+                </div>
+                <div class="info-item">
+                    <strong>Email</strong><br>
+                        info@perisw.com <br>
+                </div>
+                <div class="info-item">
+                    <strong>Our Office Numbers</strong><br>
+                        0720123456 <br>
+                </div>
+            </div>
 
-            <label for="age">Age:</label>
-                <input type="text" id="age" name="age"  placeholder="Your Age" required>
+            <div class="contact-form">  <!-- right side of the form -->
+                <h2>Lets Talk </h2>
+    
+                <form action="#" method="post">   <!-- A form for collecting the user's name and age.-->
+                    <div class="form-group">
+                        <label for="fullname">Full Name :</label>
+                        <input type="text" id="fullname" name="fullname"  placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="text" id="age" name="age"  placeholder="Your Age" required>
+                    </div>
 
-            <label for="cellno">Mobile Number :</label>
-                <input type="number" id="cellno" name="cellno" placeholder="Mobile Number" required>
+                    <div class="form-group">
+                        <label for="cellno">Mobile Number :</label>
+                        <input type="number" id="cellno" name="cellno" placeholder="Mobile Number" required>
+                    </div>
 
-            <label for="email" id="email">Email Address :</label>
-                <input type="text" id="email" name="email" placeholder="email">
+                    <div class="form-group">
+                        <label for="email" id="email">Email Address :</label>
+                        <input type="text" id="email" name="email" placeholder="email">
+                    </div>
 
-                <input type="text" id="message" name="message" placeholder="message">
-                <textarea name="message" id="message" rows="10" placeholder="Talk to me"></textarea>
+                    <div class="form-group">
+                        <textarea name="message" id="message" rows="10" placeholder="Talk to me"></textarea>
+                    </div>
 
-            <button type="submit" value="Send"> Send Message    </button>
+                    <div class="form-group">
+                        <button type="submit" value="Send"> Send Message    </button>
+                    </div>
+                </form>
 
-        </form>
+            </div>  
+        </div>
+        
+        
     </section>
    
     
